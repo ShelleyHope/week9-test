@@ -258,18 +258,24 @@ end
 # called call_method_from_string('foobar')
 # the method foobar should be invoked
 def call_method_from_string(str_method)
+  send(str_method)
 end
 
 # return true if the date is a uk bank holiday for 2014
 # the list of bank holidays is here:
 # https://www.gov.uk/bank-holidays
 def is_a_2014_bank_holiday?(date)
+	bank_holidays_2014 = ["26/05/14", "25/08/14", "25/12/14", "26/12/14"]
+	date = date.strftime("%d/%m/%y") 
+	bank_holidays_2014.include?(date)
 end
 
 # given your birthday this year, this method tells you
 # the next year when your birthday will fall on a friday
 # e.g. january 1st, will next be a friday in 2016
 def your_birthday_is_on_a_friday_in_the_year(birthday)
+	Date.today
+
 end
 
 # in a file, total the number of times words of different lengths
